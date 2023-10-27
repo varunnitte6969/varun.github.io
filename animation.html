@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Css animation</title>
+<style>
+  body {
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #7bbda9;
+    font-family:'Times New Roman', Times, serif;
+  }
+
+  .movingtext {
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translateX(-100%);
+    white-space: nowrap;
+    animation: moveText 10s linear infinite;
+    font-size: 40px;
+    color: rgb(92, 28, 211);
+  }
+
+  @keyframes moveText {
+    0% {
+      left: 100%;
+      transform: translateX(-100%);
+    }
+    100% {
+      left: -100%;
+      transform: translateX(0);
+    }
+  }
+
+  .blinkingtext{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 40px;
+    color: #ff5722;
+    animation: blinkText 1s alternate infinite;
+  }
+
+  @keyframes blinkText {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+</style>
+</head>
+<body>
+  <p class="blinkingtext">My name is Varun</p>
+  <p class="movingtext">Front end web development</p>
+</body>
+</html>
+
